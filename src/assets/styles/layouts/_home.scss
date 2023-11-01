@@ -1,3 +1,6 @@
+
+// Herramientas -----------------------------------------------------------------------
+// Genérico -----------------------------------------------------------------------
 * {
   box-sizing: border-box;
 }
@@ -8,50 +11,151 @@ body {
   height: 100vh;
   margin: 0;
   padding: 2rem;
-  font-family: $font-family-sans-serif;
+  font-family: $font-text;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  background-color: white;
+  color: $text-dark;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+// Elementos -----------------------------------------------------------------------
+// Objetos -----------------------------------------------------------------------
+h1.title {
+  font-family: $font-title;
+  font-size: 24px;
+  font-weight: 700;
+  color: $title-dark;
+
+  @media (min-width: $sm-tablet) {
+    font-size: 36px;
+  }
+}
+// Componentes -----------------------------------------------------------------------
+
+// Slider gallery
+.container {
+  max-width: 1200px;
+  width: 95%;
+} 
+
+.slider-wrapper button {
+  border: none;
+  background: none;
+  width: 0;
+  height: 0;
 }
 
+.slider-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-wrapper .slide-button {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  color: $bg-dark;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.slider-wrapper .slide-button:hover {
+  color: $bg-light;
+}
+
+.slider-wrapper button .slide-button#prev-slide {
+  left: -20px;
+  display: none;
+}
+
+.slider-wrapper button .slide-button#next-slide {
+  right: -20px;
+}
+
+.slider-wrapper .image-list {
+  display: grid;
+  gap: 18px;
+  font-size: 0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  grid-template-columns: repeat(10,1fr);
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar{
+  display: none;
+}
+
+.slider-wrapper .image-list .image-item {
+  width: 325px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+  height: 2px;
+  width: 100%;
+  background: $bg-light;
+  position: relative;
+  border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scrollbar-track{
+  height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: $bg-dark;
+  border-radius: inherit;
+  cursor: grab;
+}
+
+.slider-scrollbar .scrollbar-thumb:active{
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+
+// Logo Sims4
 .sims-logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem auto;
   max-width: 200px;
   height: auto;
 
-  @media (min-width: $mqMinWidth) {
+  @media (min-width: $sm-tablet) {
     max-width: 50%;
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
-}
-
-.uoc-footer {
+// Footer
+.footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
   text-align: center;
 }
+
+
+// Auxiliares -----------------------------------------------------------------------

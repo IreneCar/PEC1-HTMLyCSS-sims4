@@ -1,12 +1,28 @@
 @use "sass:color";
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
+// Configuración ----------------------------------------------------------------------
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #7F1832;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+// Fonts 
 
-$mqMinWidth: 620px;
+// --> Calistoga
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+// --> Montserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$font-title: 'Calistoga', serif;
+$font-text: 'Montserrat', sans-serif;
+
+
+// Colors
+$title-dark: #1f3a93;
+$text-dark: #34415e;
+$title-light: #89c4f4;
+$text-light: #e4f1fe;
+$bg-light: #eaeff4;
+$bg-dark: #192537;
+
+// Responsive media queries
+$sm-tablet: 620px;
+$lg-tablet: 960px;
+$desktop: 1200px;
