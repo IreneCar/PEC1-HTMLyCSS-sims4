@@ -9,53 +9,113 @@
     <title>Mi Afición</title>
   </head>
   <body>
+     <!-- Navbar -->
+     <include src="./views/nav.html"></include>
+     <!-- Fin Navbar -->
+
     <!-- INICIO -->
-    
-     
-    <img src="./assets/images/Logo_de_Los_Sims_4.png" alt="Sims4" class="sims-logo" loading="lazy"/>
-    
-    <p>
-      Me apasiona construir y diseñar casas. Y, ya que en la vida real no puedo hacerlo, dado que vivo de alquiler, me he aficionado a los Sims 4, donde puedo crear millones de ideas.
-    </p>
-   
-    <!-- Fin INICIO -->
-    <!-- ---------------------------------------------------------------------------- -->
-    <!-- CASAS -->
-    <div>
-      <h1 class="title">Mis casas</h1>
+    <div class="margin"> 
+      <img src="./assets/images/Logo_de_Los_Sims_4.png" alt="Sims4" class="sims-logo" loading="lazy"/>
+      
       <p>
-        Estas son tres de mis mejores casas, con un poco de variedad. Veremos una tiny house, una casa familiar y una starter house, tanto por fuera como por dentro, aunque se hará más incapié en el diseño de interiores.
+        Me apasiona construir y diseñar casas. Y, ya que en la vida real no puedo hacerlo, dado que vivo de alquiler, me he aficionado a los Sims 4, donde puedo crear millones de ideas.
       </p>
+    
+      <!-- Fin INICIO -->
+      <!-- ---------------------------------------------------------------------------- -->
+      <!-- CASAS -->
+      <div>
+        <h1 id="casas" class="title">Mis casas</h1>
+        <p>
+          Estas son tres de mis mejores casas, con un poco de variedad. Veremos una tiny house, una casa familiar y una starter house, tanto por fuera como por dentro, aunque se hará más incapié en el diseño de interiores.
+        </p>
 
-      <img src="./assets/images/c1-building.png" alt="Casa pequeña en un bosque" class="image-building">
-
-      <div class="container">
-        <div class="slider-wrapper">
-          <button><i id="prev-slide" class="slide-button fa-solid fa-circle-chevron-left"></i></button>
-          <div class="image-list">
-            <img src="./assets/images/c1-salon.png" alt="Comedor de la casa pequeña" loading="lazy">
-            <img src="./assets/images/c1-cocina.png" alt="Cocina de la casa pequeña" loading="lazy">
-            <img src="./assets/images/c1-habitacion.png" alt="Habitación de la casa pequeña" loading="lazy">
+        <h3 class="subtitle">Tiny house</h3>
+        <div class="casa-container">
+          <div class="casa-images">
+            <img class="image-building" src="./assets/images/c1-building.png" alt="Casa pequeña en un bosque">
+            <div class="image-scroll-container">
+              <img class="image-item" src="./assets/images/c1-salon.png" alt="Comedor de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c1-cocina.png" alt="Cocina de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c1-habitacion.png" alt="Habitación de la casa pequeña" loading="lazy">
+            </div>
           </div>
-          <button><i id="next-slide" class="slide-button fa-solid fa-circle-chevron-right"></i></button>
+          <p>
+            En las afueras del pueblo, una tiny house en el bosque es el hogar de una joven que vive sola para estar cerca de su instituto. La pequeña vivienda incluye salón, cocina, baño y habitación, ofreciéndole independencia y un ambiente natural sereno.</p>
         </div>
-        <div class="slider-scrollbar">
-          <div class="scrollbar-track">
-            <div class="scrollbar-thumb"></div>
+
+        <h3 class="subtitle">Casa familiar</h3>
+        <div class="casa-container">
+          <div class="casa-images">
+            <img class="image-building" src="./assets/images/c2-building.png" alt="Casa familiar en un buen barrio">
+            <div class="image-scroll-container">
+              <img class="image-item" src="./assets/images/c2-comedor.png" alt="Comedor de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-cocina.png" alt="Cocina de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-baño.png" alt="Habitación de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-cuarto1.png" alt="Habitación de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-cuarto2.png" alt="Habitación de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-cuarto3.png" alt="Habitación de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-despacho.png" alt="Habitación de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c2-jardin.png" alt="Habitación de la casa pequeña" loading="lazy">
+            </div>
           </div>
+          <p>
+            En un apacible barrio residencial, una espaciosa casa familiar de tres habitaciones, un despacho, jardín, comedor y cocina ofrece un entorno cómodo y elegante para una familia que valora la comodidad y la vida en comunidad.</p>
+        </div>
+
+        <h3 class="subtitle">Starter house</h3>
+        <div class="casa-container">
+          <div class="casa-images">
+            <img class="image-building" src="./assets/images/c3-building.png" alt="Casa pequeña en un bosque">
+            <div class="image-scroll-container">
+              <img class="image-item" src="./assets/images/c3-salon.png" alt="Comedor de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c3-cocina.png" alt="Cocina de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c3-habitacion.png" alt="Habitación de la casa pequeña" loading="lazy">
+              <img class="image-item" src="./assets/images/c3-baño.png" alt="Habitación de la casa pequeña" loading="lazy">
+            </div>
+          </div>
+          <p>
+            En un modesto barrio, una starter house con salón, cocina, una habitación y su propio baño es el lugar perfecto para comenzar una nueva aventura. Un espacio sencillo pero acogedor para dar los primeros pasos hacia la independencia.</p>
         </div>
       </div>
+      <!-- fin CASAS -->
+  <!-- ---------------------------------------------------------------------------- -->
+      <!-- FAMILIAS -->
+      <div>
+        <h1 id="familias" class="title">Mis unidades domésticas</h1>
+        <p>
+          Las unidades domésticas son los personajes que habitan una casa, que en caso de vivir más de un personaje nos encontramos con una familia. El diseño de personajes no es mi fuerte, porqué disfruto más construyendo que roleando, pero alguna he creado especialmente para mis construcciones.
+        </p>
+        
+        <h3 class="subtitle">Los Wolf</h3>
+        <div class="familia-container">
+          <div class="familia-images">
+            <img class="image-building" src="./assets/images/f3.png" alt="Casa pequeña en un bosque">
+          </div>
+          <p>
+            Los Wolf, una familia apasionada por el diseño y la tecnología, están compuestos por un padre programador, una madre diseñadora de interiores y sus cinco encantadores hijos: un joven, un adolescente, un niño, y dos bebés gemelas. Juntos, crean un hogar lleno de creatividad y amor.</p>
+        </div>
+
+        <h3 class="subtitle">Los Hopkins</h3>
+        <div class="familia-container">
+          <div class="familia-images">
+            <img class="image-building" src="./assets/images/f2.png" alt="Casa pequeña en un bosque">
+          </div>
+          <p>
+            Los Hopkins, una familia dedicada a la educación y la ciencia, están formados por un padre biólogo, una madre profesora, y sus tres hijos: dos adolescentes y una niña. Juntos, fomentan el aprendizaje y la curiosidad en un hogar lleno de conocimiento y amor.</p>
+        </div>
+
+        <h3 class="subtitle">Leaf</h3>
+        <div class="familia-container">
+          <div class="familia-images">
+            <img class="image-building" src="./assets/images/f1.png" alt="Casa pequeña en un bosque">
+          </div>
+          <p>
+          Renee Leaf, una joven independiente, vive sola y trabaja como diseñadora de ingeniería civil. Con pasión y determinación, da vida a proyectos que transforman el entorno urbano, creando un impacto positivo en su comunidad.</p>
+        </div>
+      </div>
+      <!-- Fin FAMILIAS -->
     </div>
-    <!-- fin CASAS -->
-<!-- ---------------------------------------------------------------------------- -->
-    <!-- FAMILIAS -->
-    <div>
-      <h1 class="title">Mis unidades domésticas</h1>
-      <p>
-        Las unidades domésticas son los personajes que habitan una casa, que en caso de vivir más de un personaje nos encontramos con una familia. El diseño de personajes no es mi fuerte, porqué disfruto más construyendo que roleando, pero alguna he creado especialmente para mis construcciones.
-      </p>
-    </div>
-    <!-- Fin FAMILIAS -->
 <!-- ---------------------------------------------------------------------------- -->
 
     <!-- Footer -->

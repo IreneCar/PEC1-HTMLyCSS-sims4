@@ -1,5 +1,15 @@
 
 // Herramientas -----------------------------------------------------------------------
+@mixin justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 // Genérico -----------------------------------------------------------------------
 * {
   box-sizing: border-box;
@@ -10,132 +20,93 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0;
-  padding: 2rem;
   font-family: $font-text;
-  font-size: 16px;
   line-height: 24px;
   background-color: white;
   color: $text-dark;
+}
+
+.margin {
+  margin: 2rem;
 }
 
 // Elementos -----------------------------------------------------------------------
 // Objetos -----------------------------------------------------------------------
 h1.title {
   font-family: $font-title;
-  font-size: 24px;
+  font-size: clamp(1.5rem, 2.5vw, 4rem); 
   font-weight: 700;
   color: $title-dark;
+  @include justify-center();
+  margin-top: 1.5rem;
+}
 
-  @media (min-width: $sm-tablet) {
-    font-size: 36px;
-  }
+h3.subtitle {
+  font-family: $font-title;
+  font-size: clamp(1rem, 2vw, 3rem);
+  font-weight: 700;
+  color: $title-dark;
+  @include justify-center();
+  margin-top: 1.5rem;
+}
+
+p {
+  font-family: $font-text;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 400;
+  color: $text-dark;
+}
+
+a {
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  color: $text-dark;
 }
 // Componentes -----------------------------------------------------------------------
+//Navbar
+.nav {
+  font-family: $font-text;
+  background-color: $bg-light;
+  padding: 1rem 2rem;
+}
+
+.nav .nav-items {
+  @include flex-row();
+  justify-content: space-around;
+}
+
+.nav .nav-items a:hover {
+ background-color: $bg-dark;
+ color: $text-light;
+ border-radius: 50px;
+ padding: 0.5rem 1rem;
+}
+
+.nav .nav-items a:active {
+ background-color: $bg-light;
+ color: $text-dark;
+ border-radius: 50px;
+ padding: 0.5rem 1rem;
+}
+
+// Image building
+.image-building {
+  width: 100%;
+  height: auto;
+}
 
 // Slider gallery
-.container {
-  max-width: 1200px;
-  width: 95%;
-} 
+div.image-scroll-container {
+  background-color: $bg-light;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
 
-.slider-wrapper button {
-  border: none;
-  background: none;
-  width: 0;
-  height: 0;
-}
-
-.slider-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.slider-wrapper .slide-button {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  color: $bg-dark;
-  font-size: 2.2rem;
-  cursor: pointer;
-}
-
-.slider-wrapper .slide-button:hover {
-  color: $bg-light;
-}
-
-.slider-wrapper button .slide-button#prev-slide {
-  left: -20px;
-  display: none;
-}
-
-.slider-wrapper button .slide-button#next-slide {
-  right: -20px;
-}
-
-.slider-wrapper .image-list {
-  display: grid;
-  gap: 18px;
-  font-size: 0;
-  margin-bottom: 30px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  grid-template-columns: repeat(10,1fr);
-}
-
-.slider-wrapper .image-list::-webkit-scrollbar{
-  display: none;
-}
-
-.slider-wrapper .image-list .image-item {
-  width: 325px;
-  height: 400px;
-  object-fit: cover;
-}
-
-.container .slider-scrollbar {
-  height: 24px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.slider-scrollbar .scrollbar-track {
-  height: 2px;
-  width: 100%;
-  background: $bg-light;
-  position: relative;
-  border-radius: 4px;
-}
-
-.slider-scrollbar:hover .scrollbar-track{
-  height: 4px;
-}
-
-.slider-scrollbar .scrollbar-thumb {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  background: $bg-dark;
-  border-radius: inherit;
-  cursor: grab;
-}
-
-.slider-scrollbar .scrollbar-thumb:active{
-  cursor: grabbing;
-  height: 8px;
-  top: -2px;
-}
-
-.slider-scrollbar .scrollbar-thumb::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -10px;
-  bottom: -10px;
+  img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
 }
 
 // Logo Sims4
@@ -153,9 +124,56 @@ h1.title {
 // Footer
 .footer {
   margin-top: 1.5rem;
-  font-size: 0.75rem;
+  padding: 1rem 2rem; font-size: 0.75rem;
   text-align: center;
+  color: $text-light;
+  background-color: $bg-dark;
+}
+
+.footer p{
+  font-size: 0.75rem;
+  color: $text-light;
+  margin: 0;
 }
 
 
 // Auxiliares -----------------------------------------------------------------------
+
+@media (min-width: $lg-tablet) {
+  p {
+    padding: 0 3rem;
+    line-height: 29px;
+  }
+
+  .footer {
+    @include flex-row();
+    justify-content: center;
+  }
+
+  .footer .name{
+    padding-left: 4px;
+  }
+
+  .footer p{
+    padding: 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  h1.title {
+    margin-top: 3rem;
+  }
+  
+  h3.subtitle {
+    margin-top: 2rem;
+  }
+  
+  p {
+    padding: 1rem 5rem;
+    line-height: 29px;
+  }
+
+  .casa-container {
+    
+  }
+}
